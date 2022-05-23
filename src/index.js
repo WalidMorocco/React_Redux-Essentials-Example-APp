@@ -15,7 +15,7 @@ async function start() {
   await worker.start({ onUnhandledRequest: 'bypass' })
 
   store.dispatch(fetchUsers())
-  
+
   ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>

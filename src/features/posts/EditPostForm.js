@@ -7,7 +7,7 @@ import { postUpdated, selectPostById } from './postsSlice'
 export const EditPostForm = ({ match }) => {
   const { postId } = match.params
 
-  const post = useSelector(state => selectPostById(state, postId))
+  const post = useSelector((state) => selectPostById(state, postId))
 
   const [title, setTitle] = useState(post.title)
   const [content, setContent] = useState(post.content)
@@ -15,8 +15,8 @@ export const EditPostForm = ({ match }) => {
   const dispatch = useDispatch()
   const history = useHistory()
 
-  const onTitleChanged = e => setTitle(e.target.value)
-  const onContentChanged = e => setContent(e.target.value)
+  const onTitleChanged = (e) => setTitle(e.target.value)
+  const onContentChanged = (e) => setContent(e.target.value)
 
   const onSavePostClicked = () => {
     if (title && content) {
